@@ -102,4 +102,65 @@ This script handles various client-side player actions after the 'FirstScript' h
 
 - `gameLoadedRemote.Event:Connect(loadPlayer)`: Connects the `loadPlayer()` function to the "GameLoaded" remote event.
 
+# Custom Loading Screen Script
+
+## Code Description
+
+This script is used to display a custom loading screen and disable core GUI elements. It also disables controls during the loading process.
+
+## Game Services
+
+The script uses the following game services:
+
+- `GuiService`: Manages GUI-related operations.
+- `Players`: Manages player-related information.
+- `ReplicatedFirst`: Provides access to assets that should be available before loading screen.
+- `ReplicatedStorage`: Stores assets that should be available across the game.
+- `StarterGui`: Manages core GUI elements.
+- `TweenService`: Handles animations and transitions.
+
+## Settings
+
+These are the adjustable settings within the script:
+
+### Interface
+
+- `LoadCircleDelay`: Time interval between load circle rotation steps (in seconds).
+- `LoadCircleStep`: Number of degrees the load circle rotates per step.
+- `LoadscreenMinDuration`: Minimum duration the replacement loading screen must be visible (in seconds).
+- `FadeDuration`: Duration of fade transitions (in seconds).
+
+## Instance Variables
+
+Instance variables hold paths and objects used in the script. They include folders, connections, player-related variables, and GUI elements.
+
+## Functions
+
+Functions are blocks of code that can be run at various points. They include asynchronous coroutine-related functions and functions for managing the loading screen and transitions.
+
+### Coroutines
+
+- `startAsync(functionObject, parameters)`: Starts an asynchronous function with optional parameters.
+- `isAsyncRunning(asyncName)`: Returns the status of a running asynchronous function.
+- `stopAsync(functionObject)`: Stops a running asynchronous function.
+
+### Interface
+
+- `spinLoadCircle(asyncName, parameters)`: Spins the load circle of the custom loading screen asynchronously.
+- `replaceRobloxLoadscreen()`: Replaces the default Roblox loading screen with the custom one.
+- `startFade(transparency, duration)`: Darkens the screen for transition effects.
+
+### Game
+
+- `loadGame()`: Displays the custom loading screen, disables controls, and manages transitions.
+
+## Connections
+
+Connections bind events to functions. In this script, the `loadGame()` function is called immediately to initiate the loading process.
+
+---
+
+*Note: The script appears to be written in Lua for use within Roblox. Make sure to properly integrate it into your Roblox game's codebase.*
+
+
   Readme gemaakt door ChatGPT
